@@ -1,6 +1,6 @@
 /**
  * Name        : main.c
- * Version     :
+ * Version     : 1.0
  * Description : main definition for FreeRTOS application
  */
 
@@ -50,7 +50,7 @@ const portTickType DELAY_1SEC = 1000 / portTICK_RATE_MS;
 const portTickType DELAY_500MS = 500 / portTICK_RATE_MS;
 const portTickType DELAY_200MS = 200 / portTICK_RATE_MS;
 
-//void __error__(char *pcFilename, unsigned long ulLine) {
+//void _error_(char *pcFilename, unsigned long ulLine) {
 //}
 
 /**

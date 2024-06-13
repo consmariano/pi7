@@ -136,7 +136,7 @@ char getCharFromSerial() {
   // char ch = NO_CHAR;
   // BaseType_t status = pdFAIL;
   // if (_mode == DEVELOPMENT_MODE ) {
-	//   status = xQueueReceive(qCommDev, &ch, pdMS_TO_TICKS(200)); // portMAX_DELAY); // [jo:231004] original: portMAX_DELAY é infinito, estou fazendo seguir antes (200 ms)
+	//   status = xQueueReceive(qCommDev, &ch, pdMS_TO_TICKS(200)); // portMAX_DELAY); // [jo:231004] original: portMAX_DELAY Ã© infinito, estou fazendo seguir antes (200 ms)
   //   if (status == pdFAIL) ch = NO_CHAR;
   // } else { // REAL_MODE
   //   ch = UARTGetChar(0, false);
@@ -252,7 +252,7 @@ void processReadRegister() {
 
   registerToRead = decode ( rxBuffer[7], rxBuffer[8]);
   // Aciona controller para obter valor. Note que a informacao
-  // ate´ poderia ser acessada diretamente. Mas a arquitetura MVC
+  // ateÂ´ poderia ser acessada diretamente. Mas a arquitetura MVC
   // exige que todas as interacoes se deem atraves do controller.
   registerValue = ctl_ReadRegister(registerToRead);
 
@@ -363,7 +363,7 @@ void processMessage() {
  cooperativo funcionar, cada funcao deve retornar o mais rapidamente possivel.
  Isso ate nem seria necessario com o FreeRTOS, mas exemplifica a ideia de
  multitasking cooperativo.
- Assim, a recepcao não fica em loop esperando terminar de receber toda a mensagem.
+ Assim, a recepcao nÃ£o fica em loop esperando terminar de receber toda a mensagem.
  A mensagem recebida vai sendo armazenada em rxBuffer; idxRxBuffer indica
  em que posicao armazenar o caracter recebido. Ao verificar que a msg foi
  completada (recebendo 0x0D, 0x0A), sinaliza que a msg foi
@@ -377,7 +377,7 @@ void receiveMessage() {
   char ch = MB_NO_CHAR;
 
   //ch = getCharFromSerial(); // [jo:231005] original
-   if ((ch = getchar_timeout_us(0)) /* != PICO_ERROR_TIMEOUT && ch */ != MB_NO_CHAR) { // [jo:231005] modbus só pela serial USB
+   if ((ch = getchar_timeout_us(0)) /* != PICO_ERROR_TIMEOUT && ch */ != MB_NO_CHAR) { // [jo:231005] modbus sÃ³ pela serial USB
   // if (ch != NO_CHAR) { // [jo:231005] original
 
     printf(" [%x] ", ch); // [jo:231004] teste
